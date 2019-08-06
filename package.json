@@ -4,8 +4,8 @@
   "description": "Telegram bot in 30 lines of code",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nohup node index.js > log.txt 2>&1 & echo $! > pid.txt",
+    "stop": "kill $(tail pid.txt)"
   },
   "dependencies": {
     "telegraf": "^3.32.0"
